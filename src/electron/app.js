@@ -1,5 +1,6 @@
-const { app, BrowserWindow } = require('electron');
+const { app, BrowserWindow, nativeImage } = require('electron');
 const path = require('path');
+import { TrayMenu } from './tray.js';
 
 export class App {
   mainWindow = null;  
@@ -21,12 +22,15 @@ export class App {
   }
 
   createMainWindow() {
+    
+    // const icon = nativeImage.createFromPath(app.getAppPath() + '/assets/icon.icns');
+    // console.log('icon', )
     this.mainWindow = new BrowserWindow({
       width: this.width,
       height: this.height,
       minWidth: this.minWidth,
       minHeight: this.minHeight,
-      icon: path.join(__dirname, 'favicon.png'),
+      icon: app.getAppPath() + 'src/assets/icon_ulocalhosts.png',
       webPreferences: {
         preload: path.join(__dirname, 'preload.js'),
         nodeIntegration: true,
@@ -51,6 +55,8 @@ export class App {
 
   onReady() {
     this.createMainWindow();
+    const tray = new TrayMenu();
+    tray.load();
   }
   // Emitted when the window is closed.
   onClosed() {

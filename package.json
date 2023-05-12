@@ -1,6 +1,6 @@
 {
-  "name": "ucanhosts",
-  "productName": "uCanHosts",
+  "name": "ulocalhosts",
+  "productName": "uLocalHosts",
   "version": "1.0.0",
   "description": "App to manage local domains for development",
   "keywords": [],
@@ -27,6 +27,7 @@
     "electron": "24.3.0"
   },
   "dependencies": {
+    "@electron-forge/publisher-github": "^6.1.1",
     "@sveltejs/vite-plugin-svelte": "^2.2.0",
     "autoprefixer": "^10.4.14",
     "detect-port": "^1.5.1",

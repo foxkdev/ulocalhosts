@@ -13,7 +13,7 @@ export class HttpServer {
     this.port = port
     this.app = express();
     this.app.use('/', async (req, res, next) => {
-      const host = await domains.getByHost(req.headers.host);
+      const host = await domains.getByHostAndPath(req.headers.host, req.url);
       if(!host) {
         return res.status(404).send('Not found HOST');
       }

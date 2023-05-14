@@ -10,6 +10,7 @@
 		protocol: 'http',
 		host: null,
 		port: null,
+		path: '*'
 	}
 	let addModalOpen = false
 
@@ -33,11 +34,13 @@
 			protocol: newDomain.protocol,
 			host: newDomain.host,
 			port: parseInt(newDomain.port),
+			path: newDomain.path,
 		})
 		newDomain = {
 			host: null,
 			protocol: 'http',
 			port: null,
+			path: '*'
 		}
 		addModalOpen = false
 		await getDomains()
@@ -81,6 +84,7 @@
 					</span>
 					<span class="px-2 flex-1">
 						{domain.host}
+						<span class="text-gray-500 px-2">Path: {domain.path}</span>
 					</span>
 					<span class="flex-2 text-gray-500">
 						{domain.port}
@@ -123,6 +127,10 @@
 				<Label class="space-y-2">
 					<span>Host</span>
 					<Input type="text" name="host" bind:value={newDomain.host} placeholder="app.local" required />
+				</Label>
+				<Label class="space-y-2">
+					<span>Path</span>
+					<Input type="text" name="path" bind:value={newDomain.path} placeholder="*" />
 				</Label>
 				<Label class="space-y-2">
 					<span>Port</span>

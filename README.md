@@ -8,7 +8,16 @@
 
 ## What is uLocalHosts?
 
-ULocalHosts is a local domains manager to local environments. You can create domains .local easy to proxy to your services.
+ULocalHosts is a local domain manager for local environments. You can create easy-to-use .local domains as a proxy for your services.
+
+
+Only for Mac OS.
+
+
+<p align="center">
+<img src="screenshot.png" width="500">
+</p>
+
 
 
 ## Supporting ULocalHosts
